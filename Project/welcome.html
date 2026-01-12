@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | Jeniel Sabalboro</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+body {
+  height: 100vh;
+  background: linear-gradient(-45deg, #020617, #020617, #0a1f44, #020617);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e5e7eb;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.welcome-box {
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.welcome-box h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #e0f2fe;
+  text-shadow: 0 0 15px rgba(56,189,248,0.35);
+  letter-spacing: 1px;
+}
+
+.welcome-box span {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+/* ===== Icons ===== */
+.top-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.top-icons a {
+  color: #94a3b8;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.top-icons a:hover {
+  color: #60a5fa;
+  transform: translateY(-4px);
+}
+
+/* ===== Button ===== */
+.space-btn {
+  position: relative;
+  margin-top: 25px;
+  padding: 14px 45px;
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #e5e7eb;
+  background: transparent;
+  border: 1.5px solid #3b82f6;
+  border-radius: 50px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.space-btn:hover {
+  background: rgba(59, 130, 246, 0.08);
+  box-shadow: 0 0 25px rgba(59,130,246,0.35);
+  transform: translateY(-2px);
+}
+
+/* ===== Stars (subtle) ===== */
+#container-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#stars {
+  width: 2px;
+  height: 2px;
+  background: #93c5fd;
+  position: absolute;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.2; }
+}
+
+/* ===== Glow (very subtle) ===== */
+#glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+#glow .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(59,130,246,0.25);
+  filter: blur(40px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: glowAnim 3s infinite alternate;
+}
+
+@keyframes glowAnim {
+  from { opacity: 0.2; }
+  to { opacity: 0.4; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.top-icons {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    gap: 25px; /* space between icons */
+    font-size: 1.6rem; /* icon size */
+}
+
+.top-icons a {
+    color: white;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.top-icons a:hover {
+    transform: translateY(-5px) scale(1.15);
+    text-shadow: 0 0 15px rgba(255,255,255,0.8),
+                 0 0 30px rgba(147,51,234,0.8);
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: #60a5fa;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+  </style>
+</head>
+<body>
+<div class="welcome-box">
+  <div class="top-icons ">
+    <a href="#" target="_blank">
+      <i class="fa-brands fa-github" style="color: #74C0FC;"></i>
+    </a>
+    <a href="#">
+      <i class="fa-solid fa-code" style="color: #74C0FC;"></i>
+    </a>
+    <a href="#">
+      <i class="fa-solid fa-circle-user" style="color: #74C0FC;"></i>
+    </a>
+  </div>
+
+  <h1>Welcome to My Portfolio</h1>
+  <p class="lead">
+<span id="typing"></span><span class="cursor">|</span>
+  </p>
+
+  <!-- Uiverse.io Styled Button -->
+  <button type="button" class="space-btn" onclick="location.href='portfolio.html'">
+    ENTER PORTFOLIO
+    <div id="container-stars">
+      <div id="stars"></div>
+    </div>
+    <div id="glow">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </button>
+</div>
+  <script>
+    // Optional: generate multiple stars randomly
+    const starsContainer = document.getElementById('container-stars');
+    for(let i=0; i<30; i++){
+      const star = document.createElement('div');
+      star.style.width = `${Math.random()*3 + 1}px`;
+      star.style.height = star.style.width;
+      star.style.top = `${Math.random()*100}%`;
+      star.style.left = `${Math.random()*100}%`;
+      star.style.position = 'absolute';
+      star.style.background = 'white';
+      star.style.borderRadius = '50%';
+      star.style.opacity = Math.random();
+      star.style.animation = `twinkle ${Math.random()*2 + 1}s infinite alternate`;
+      starsContainer.appendChild(star);
+    }
+
+    const text = "@ <Jeniel | BSCpE/>";
+  let index = 0;
+
+  function typeEffect() {
+    if (index < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, 300);
+    }
+  }
+
+  typeEffect();
+  </script>
+</body>
+</html>
