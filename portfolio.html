@@ -13,17 +13,12 @@
     
 body {
   scroll-behavior: smooth;
-  background: linear-gradient(-45deg, #020617, #020617, #0a1f44, #020617);
-  background-size: 400% 400%;
+  background: url("images/bg.png") center center / cover no-repeat fixed;
   animation: gradientBG 10s ease infinite;
   color: #e5e7eb;
   overflow-x: hidden;
 }
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+
 /* ===== CONTINUOUS BACKGROUND CANVAS ===== */
 #bg-canvas {
   position: fixed;
@@ -281,13 +276,34 @@ body {
 
 .skills-hero {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  grid-template-rows: repeat(2, auto);   /* 2 rows */
-  gap: 60px;
-  max-width: 1200px;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns desktop */
+  gap: 50px;
+  max-width: 1100px;
+  width: 100%;
   margin: auto;
   justify-items: center;
 }
+
+/* Tablet */
+@media (max-width: 992px) {
+  .skills-hero {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .skills-hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .skill-float img {
+    width: clamp(180px, 80vw, 260px);
+  }
+}
+
 
 /* Each skill behaves like hero-image */
 .skill-float {
@@ -467,6 +483,10 @@ footer {
   color: #94a3b8;
 }
 
+.card-img-top {
+  height: 200px; /* or any size you want */
+  object-fit: cover; /* crops image nicely */
+}
 
   </style>
 </head>
@@ -599,6 +619,7 @@ footer {
 
       <div class="col-md-6">
         <div class="card h-100 shadow">
+              <img src="images/biogas.png" class="card-img-top" alt="Automated Biogas Monitoring System">
           <div class="card-body">
             <h5 class="card-title">Automated Biogas Monitoring System</h5>
             <p class="card-text">
@@ -612,9 +633,10 @@ footer {
       <div class="col-md-6">
         <div class="card h-100 shadow">
           <div class="card-body">
-            <h5 class="card-title"> </h5>
+            <h5 class="card-title">Portfolio</h5>
             <p class="card-text">
-              Autonomous drone using thermal imaging and AI to detect and extinguish fires in hard-to-reach areas.
+              Personal portfolio website showcasing my projects, technical skills, and experience.
+              Built with responsive design to highlight my work in computer engineering and IoT systems.
             </p>
           </div>
         </div>
@@ -623,10 +645,11 @@ footer {
       <div class="col-md-6">
         <div class="card h-100 shadow">
           <div class="card-body">
-            <h5 class="card-title">Smart Biomass Grain Dryer</h5>
-            <p class="card-text">
-              Rice husk-powered dryer with sensors and smart control to help farmers dry grains during rainy season.
-            </p>
+            <h5 class="card-title">Smart House</h5>
+         <p class="card-text">
+            IoT-based smart home system featuring automated lighting, security, and appliance control.
+            Integrated with sensors and microcontrollers for real-time monitoring and remote access.
+          </p>
           </div>
         </div>
       </div>
@@ -634,9 +657,10 @@ footer {
       <div class="col-md-6">
         <div class="card h-100 shadow">
           <div class="card-body">
-            <h5 class="card-title">Solar-Powered Water Purification System</h5>
+            <h5 class="card-title">POS System</h5>
             <p class="card-text">
-              Portable water purification system using solar energy and automated filtration monitoring.
+              Point of Sale (POS) system designed for small businesses with sales tracking,
+              inventory management, and transaction reporting using a database-backed system.
             </p>
           </div>
         </div>
@@ -655,30 +679,40 @@ footer {
     <h4 class="text-center mb-4">Front End</h4>
     <div class="row g-4 justify-content-center">
 
+      <div class="col-6 col-md-3 d-flex justify-content-center">
         <div class="tool-circle">
           <img src="logos/html5.svg" alt="HTML">
           <span>HTML</span>
         </div>
+      </div>
 
+      <div class="col-6 col-md-3 d-flex justify-content-center">
         <div class="tool-circle">
           <img src="logos/css.svg" alt="CSS">
           <span>CSS</span>
         </div>
+      </div>
 
+      <div class="col-6 col-md-3 d-flex justify-content-center">
         <div class="tool-circle">
           <img src="logos/javascript.svg" alt="JavaScript">
           <span>JavaScript</span>
         </div>
+      </div>
 
+      <div class="col-6 col-md-3 d-flex justify-content-center">
         <div class="tool-circle">
           <img src="logos/bootstrap.svg" alt="Bootstrap">
           <span>Bootstrap</span>
         </div>
+      </div>
 
+    </div>
 
     <!-- BACKEND -->
     <h4 class="text-center mt-5 mb-4">Backend</h4>
     <div class="row g-4 justify-content-center">
+
       <div class="col-6 col-md-3 d-flex justify-content-center">
         <div class="tool-circle">
           <img src="logos/php.svg" alt="PHP">
@@ -686,11 +720,13 @@ footer {
         </div>
       </div>
 
+      <div class="col-6 col-md-3 d-flex justify-content-center">
         <div class="tool-circle">
           <img src="logos/mysql.svg" alt="MySQL">
           <span>MySQL</span>
         </div>
       </div>
+
     </div>
 
     <!-- OTHERS -->
@@ -720,8 +756,8 @@ footer {
 
       <div class="col-6 col-md-3 d-flex justify-content-center">
         <div class="tool-circle">
-          <img src="logos/sublimetext.svg" alt="Sublime">
-          <span>Sublime</span>
+          <img src="logos/vs.svg" alt="Visual Studio">
+          <span>Visual Studio</span>
         </div>
       </div>
 
